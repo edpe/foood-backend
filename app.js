@@ -6,8 +6,8 @@ var port = 4200;
 var cors = require('cors');
 
 // Mongoose connection with mongodb
-mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://<uname>:<pwd>@ds139322.mlab.com:39322/aufinancex')
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost:27017/foood-db')
     .then(() => { // if all is ok we will be here
       console.log('Start');
     })
