@@ -8,7 +8,7 @@ var Item = new Schema({
   },
 
 },{
-    collection: 'items'
+	collection: 'items'
 });
 
 module.exports = mongoose.model('Item', Item);

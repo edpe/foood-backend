@@ -3,9 +3,10 @@ var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var port = 4200;
+var cors = require('cors');
 
 // Mongoose connection with mongodb
-mongoose.Promise = global.Promise;
+mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/foood-db')
     .then(() => { // if all is ok we will be here
       console.log('Start');
@@ -19,7 +20,7 @@ mongoose.connect('mongodb://localhost:27017/foood-db')
 var itemRouter = require('./src/routes/itemRouter');
 
 // Use middlewares to set view engine and post json data to the server
-app.use(express.static('public'));
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
