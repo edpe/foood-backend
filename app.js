@@ -17,14 +17,14 @@ mongoose.connect('mongodb://localhost:27017/foood-db')
     });
 
 // Required application specific custom router module
-var itemRouter = require('./src/routes/itemRouter');
+var recipeRouter = require('./src/routes/recipeRouter');
 
 // Use middlewares to set view engine and post json data to the server
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/items', itemRouter);
+app.use('/recipes', recipeRouter);
 
 // Start the server
 app.listen(port, function(){
