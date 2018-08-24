@@ -8,7 +8,31 @@ var Recipe = new Schema(
       type: String
     },
 
+    ingredients: [
+      {
+        title: {
+          type: String
+        },
+        quantity: {
+          type: String
+        },
+        measurement: {
+          type: String
+        }
+      }
+    ],
+
+    method: {
+      step: {
+        type: String
+      }
+    },
+
     duration: {
+      type: String
+    },
+
+    image: {
       type: String
     }
   },
