@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Define collection and schema for Recipes
@@ -8,17 +8,19 @@ var Recipe = new Schema(
       type: String
     },
 
-    ingredients: {
-      name: {
-        type: String
-      },
-      quantity: {
-        type: String
-      },
-      measurement: {
-        type: String
+    ingredients: [
+      {
+        title: {
+          type: String
+        },
+        quantity: {
+          type: String
+        },
+        measurement: {
+          type: String
+        }
       }
-    },
+    ],
 
     method: {
       step: {
@@ -35,8 +37,8 @@ var Recipe = new Schema(
     }
   },
   {
-    collection: 'recipes'
+    collection: "recipes"
   }
 );
 
-module.exports = mongoose.model('Recipe', Recipe);
+module.exports = mongoose.model("Recipe", Recipe);
